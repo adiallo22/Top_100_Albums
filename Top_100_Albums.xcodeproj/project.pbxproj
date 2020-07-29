@@ -16,6 +16,7 @@
 		C0095EAA24D206210000B1EC /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EA924D206210000B1EC /* AlbumCell.swift */; };
 		C0095EAC24D20F080000B1EC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EAB24D20F080000B1EC /* Extensions.swift */; };
 		C0095EAE24D212160000B1EC /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EAD24D212160000B1EC /* Album.swift */; };
+		C0095EB024D213B70000B1EC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EAF24D213B70000B1EC /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C0095EA924D206210000B1EC /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		C0095EAB24D20F080000B1EC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C0095EAD24D212160000B1EC /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		C0095EAF24D213B70000B1EC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		C0095EA224D2000E0000B1EC /* API */ = {
 			isa = PBXGroup;
 			children = (
+				C0095EAF24D213B70000B1EC /* NetworkService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				C0095E9024D1FFB40000B1EC /* SceneDelegate.swift in Sources */,
 				C0095EAA24D206210000B1EC /* AlbumCell.swift in Sources */,
 				C0095EAE24D212160000B1EC /* Album.swift in Sources */,
+				C0095EB024D213B70000B1EC /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

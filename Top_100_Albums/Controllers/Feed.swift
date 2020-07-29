@@ -14,12 +14,19 @@ class Feed : UIViewController {
     
     private let tableView = UITableView()
     
-    private let test = ["x", "x", "x"]
+    private let endpoint = "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json"
+    
+    private var albums : [Album] = [] {
+        didSet {
+            print("albums data received.")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         configTableView()
+        getTopHundredAlbum()
     }
     
 }
@@ -28,7 +35,7 @@ class Feed : UIViewController {
 
 extension Feed {
     
-    func configTableView() {
+    fileprivate func configTableView() {
         view.addSubview(tableView)
         tableView.anchor(top: view.safeAreaLayoutGuide.topAnchor,
                          left: view.leftAnchor,
@@ -50,14 +57,24 @@ extension Feed : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return test.count
+        return albums.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! AlbumCell
-        cell.textLabel?.text = test[indexPath.row]
         return cell
     }
     
+}
+
+//MARK: - API
+
+extension Feed {
+    
+    fileprivate func getTopHundredAlbum() {
+        NetworkService.shared.getTopHundredAlbums(withEndpoint: endpoint) { result in
+            print("")
+        }
+    }
     
 }
