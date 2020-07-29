@@ -14,6 +14,8 @@
 		C0095E9A24D1FFB60000B1EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0095E9824D1FFB60000B1EC /* LaunchScreen.storyboard */; };
 		C0095EA824D2007C0000B1EC /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EA724D2007C0000B1EC /* Feed.swift */; };
 		C0095EAA24D206210000B1EC /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EA924D206210000B1EC /* AlbumCell.swift */; };
+		C0095EAC24D20F080000B1EC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EAB24D20F080000B1EC /* Extensions.swift */; };
+		C0095EAE24D212160000B1EC /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EAD24D212160000B1EC /* Album.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		C0095E9B24D1FFB60000B1EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0095EA724D2007C0000B1EC /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		C0095EA924D206210000B1EC /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		C0095EAB24D20F080000B1EC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C0095EAD24D212160000B1EC /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		C0095EA124D200070000B1EC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C0095EAB24D20F080000B1EC /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 		C0095EA624D2002D0000B1EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C0095EAD24D212160000B1EC /* Album.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,10 +195,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0095EAC24D20F080000B1EC /* Extensions.swift in Sources */,
 				C0095E8E24D1FFB40000B1EC /* AppDelegate.swift in Sources */,
 				C0095EA824D2007C0000B1EC /* Feed.swift in Sources */,
 				C0095E9024D1FFB40000B1EC /* SceneDelegate.swift in Sources */,
 				C0095EAA24D206210000B1EC /* AlbumCell.swift in Sources */,
+				C0095EAE24D212160000B1EC /* Album.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
