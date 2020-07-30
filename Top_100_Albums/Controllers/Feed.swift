@@ -56,7 +56,6 @@ extension Feed {
     fileprivate func pushDetailsController(atIndex index: IndexPath) {
         let detailsvc = DetailsVC()
         detailsvc.album = albums[index.row]
-        let album = albums[index.row]
         navigationController?.pushViewController(detailsvc, animated: true)
     }
     

@@ -8,11 +8,12 @@
 
 import UIKit
 
+private let padding = CGFloat(20)
+
 class DetailsVC : UIViewController {
     
     private var thumbnail : UIImageView = {
         let imgV = UIImageView()
-        imgV.backgroundColor = .blue
         imgV.layer.cornerRadius = 15
         imgV.layer.masksToBounds = true
         return imgV
@@ -38,13 +39,11 @@ class DetailsVC : UIViewController {
     private var copyright : UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.text = "Copyright: "
         return label
     }()
     
     private var genre : UILabel = {
         let label = UILabel()
-        label.text = "Genre: "
         return label
     }()
     
@@ -58,8 +57,6 @@ class DetailsVC : UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         configUI()
-//        guard let feed = navigationController?.presentingViewController as? Feed else { return }
-//        feed.delegate = self
     }
     
 }
@@ -71,23 +68,25 @@ extension DetailsVC {
     
     fileprivate func configUI() {
         view.addSubview(viewButton)
-        viewButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: 20)
+        viewButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: padding)
         viewButton.centerX(inView: view)
         viewButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        viewButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                            constant: padding).isActive = true
         //
         view.addSubview(thumbnail)
         thumbnail.anchor(top: view.safeAreaLayoutGuide.topAnchor,
                          left: view.leftAnchor,
                          right: view.rightAnchor,
-                         paddingTop: 20, paddingLeft: 20, paddingRight: 20)
+                         paddingTop: padding, paddingLeft: padding, paddingRight: padding)
         thumbnail.heightAnchor.constraint(equalToConstant: 300).isActive = true
         //
         let stack : UIStackView = {
             let stack = UIStackView(arrangedSubviews: [name, genre, copyright])
             stack.axis = .vertical
-            stack.spacing = 10
+            stack.spacing = 15
             stack.isLayoutMarginsRelativeArrangement = true
-            stack.layoutMargins = .init(top: 20, left: 20, bottom: 20, right: 20)
+            stack.layoutMargins = .init(top: padding, left: padding, bottom: padding, right: padding)
             return stack
         }()
         view.addSubview(stack)
@@ -97,9 +96,9 @@ extension DetailsVC {
     fileprivate func configAlbum() {
         guard let album = album else { return }
         let viewModel = AlbumViewModel.init(album: album)
-        name.text = "\(viewModel.name) by \(viewModel.artist)"
-        copyright.text = "\(viewModel.copyright) - \(viewModel.releaseDate)"
-        genre.text = viewModel.genre
+        name.text = "🎵 \(viewModel.name) by \(viewModel.artist)"
+        copyright.text = "\(viewModel.copyright)  ●  \(viewModel.releaseDate)"
+        genre.text = "🎧 \(viewModel.genre)"
         DispatchQueue.global(qos: .background).async {
             guard let url = viewModel.thumbnail else { return }
             guard let data = try? Data.init(contentsOf: url) else { return }
