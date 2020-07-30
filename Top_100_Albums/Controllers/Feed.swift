@@ -52,6 +52,11 @@ extension Feed {
         tableView.register(AlbumCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
+    fileprivate func pushDetailsController() {
+        let detailsvc = DetailsVC()
+        navigationController?.pushViewController(detailsvc, animated: true)
+    }
+    
 }
 
 //MARK: - delegate and data source
@@ -59,7 +64,7 @@ extension Feed {
 extension Feed : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected.")
+        pushDetailsController()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
