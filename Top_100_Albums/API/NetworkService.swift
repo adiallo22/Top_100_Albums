@@ -53,7 +53,12 @@ extension NetworkService {
                 let genres = result["genres"] as? [[String:Any]]  ?? [["1":1]]
                 let genresName = genres[0]["name"] as? String ?? "Music"
                 print("\(copyright) -- \(genresName) -- \(releaseDate)")
-                let album = Album.init(name: name, artist: artistName, thumbnail: artworkUrl100)
+                let album = Album.init(name: name,
+                                       artist: artistName,
+                                       thumbnail: artworkUrl100,
+                                       copyright: copyright,
+                                       releaseDate: releaseDate,
+                                       genre: genresName)
                 albums.append(album)
             }
         } catch let error {
