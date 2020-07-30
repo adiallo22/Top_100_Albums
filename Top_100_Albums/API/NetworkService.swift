@@ -22,28 +22,39 @@ struct NetworkService {
                 completion(.failure(error!))
             } else {
                 if let data = data {
-                    do {
-                        var albums : [Album] = []
-                        let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any]
-                        guard let feed = json?["feed"] as? [String:Any] else { return }
-                        guard let results = feed["results"] as? NSArray else { return }
-                        for result in results {
-                            guard let result = result as? [String:Any] else { return }
-                            guard let artistName = result["artistName"] as? String,
-                                let artworkUrl100 = result["artworkUrl100"] as? String,
-                                let name = result["name"] as? String else { return }
-                            let album = Album.init(name: name, artist: artistName, thumbnail: artworkUrl100)
-                            albums.append(album)
-                            DispatchQueue.main.async {
-                                completion(.success(albums))
-                            }
-                        }
-                    } catch {
-                        print("error")
+                    guard let albums = self.parseJSON(data) else { return }
+                    DispatchQueue.main.async {
+                        completion(.success(albums))
                     }
                 }
             }
         }.resume()
+    }
+    
+}
+
+//MARK: - helpers
+
+extension NetworkService {
+    
+    fileprivate func parseJSON(_ data: Data) -> [Album]? {
+        var albums : [Album] = []
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any]
+            guard let feed = json?["feed"] as? [String:Any] else { return nil }
+            guard let results = feed["results"] as? NSArray else { return nil }
+            for result in results {
+                guard let result = result as? [String:Any] else { return nil }
+                guard let artistName = result["artistName"] as? String,
+                    let artworkUrl100 = result["artworkUrl100"] as? String,
+                    let name = result["name"] as? String else { return nil }
+                let album = Album.init(name: name, artist: artistName, thumbnail: artworkUrl100)
+                albums.append(album)
+            }
+        } catch {
+            print("error")
+        }
+        return albums
     }
     
 }
