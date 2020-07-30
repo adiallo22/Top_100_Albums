@@ -21,6 +21,7 @@ class DetailsVC : UIViewController {
     private var viewButton : UIButton = {
         let button = UIButton()
         button.setTitle("Open on ITunes", for: .normal)
+        button.addTarget(self, action: #selector(openItunesTapped), for: .touchUpInside)
         button.backgroundColor = .black
         button.tintColor = .white
         button.layer.cornerRadius = 15
@@ -98,4 +99,15 @@ extension DetailsVC : AlbumDetailsDelegate {
         print(album)
     }
 
+}
+
+
+//MARK: - selectors
+
+extension DetailsVC {
+    
+    @objc func openItunesTapped() {
+        print("itunes opened.")
+    }
+    
 }
