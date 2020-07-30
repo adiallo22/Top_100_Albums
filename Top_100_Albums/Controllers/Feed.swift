@@ -18,7 +18,7 @@ class Feed : UIViewController {
     
     private var albums : [Album] = [] {
         didSet {
-            print("albums data received.")
+            tableView.reloadData()
         }
     }
     
@@ -62,6 +62,8 @@ extension Feed : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! AlbumCell
+        cell.textLabel?.text = albums[indexPath.row].name
+        cell.detailTextLabel?.text = albums[indexPath.row].artist
         return cell
     }
     
@@ -72,8 +74,14 @@ extension Feed : UITableViewDelegate, UITableViewDataSource {
 extension Feed {
     
     fileprivate func getTopHundredAlbum() {
-        NetworkService.shared.getTopHundredAlbums(withEndpoint: endpoint) { result in
-            
+        NetworkService.shared.getTopHundredAlbums(withEndpoint: endpoint) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let albums):
+                self.albums = albums
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
     

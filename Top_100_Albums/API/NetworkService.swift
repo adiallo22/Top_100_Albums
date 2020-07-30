@@ -34,7 +34,9 @@ struct NetworkService {
                                 let name = result["name"] as? String else { return }
                             let album = Album.init(name: name, artist: artistName, thumbnail: artworkUrl100)
                             albums.append(album)
-                            completion(.success(albums))
+                            DispatchQueue.main.async {
+                                completion(.success(albums))
+                            }
                         }
                     } catch {
                         print("error")
