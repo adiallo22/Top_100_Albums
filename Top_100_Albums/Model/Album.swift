@@ -13,8 +13,8 @@ struct Album {
     let name : String
     let artist : String
     let thumbnail : String
-    let copyright : String?
-    let releaseDate : String?
-    let genre : String?
+    let copyright : String
+    let releaseDate : String
+    let genre : String
     
 }

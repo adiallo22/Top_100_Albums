@@ -25,6 +25,18 @@ struct AlbumViewModel {
         return url
     }
     
+    var copyright : String {
+        return album.copyright
+    }
+    
+    var genre : String {
+        return album.genre
+    }
+    
+    var releaseDate : String {
+        return album.releaseDate
+    }
+    
     init(album: Album) {
         self.album = album
     }
