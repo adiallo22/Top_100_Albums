@@ -62,8 +62,7 @@ extension Feed : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! AlbumCell
-        cell.textLabel?.text = albums[indexPath.row].name
-        cell.detailTextLabel?.text = albums[indexPath.row].artist
+        cell.album = albums[indexPath.row]
         return cell
     }
     
