@@ -73,7 +73,7 @@ extension Feed {
     
     fileprivate func getTopHundredAlbum() {
         NetworkService.shared.getTopHundredAlbums(withEndpoint: endpoint) { result in
-            print("")
+            
         }
     }
     
