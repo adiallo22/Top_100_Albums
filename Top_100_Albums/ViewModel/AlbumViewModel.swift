@@ -6,7 +6,7 @@
 //  Copyright © 2020 Abdul Diallo. All rights reserved.
 //
 
-import Foundation
+import UIKit.UIImage
 
 struct AlbumViewModel {
     
@@ -21,11 +21,8 @@ struct AlbumViewModel {
     }
     
     var thumbnail : URL? {
-        if let url = URL.init(string: album.thumbnail) {
-            return url
-        } else {
-            return nil
-        }
+        guard let url = URL.init(string: album.thumbnail) else { return nil }
+        return url
     }
     
     init(album: Album) {

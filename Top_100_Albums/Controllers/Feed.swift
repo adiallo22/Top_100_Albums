@@ -43,6 +43,8 @@ extension Feed {
                          right: view.rightAnchor)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 250
+        tableView.separatorStyle = .none
         tableView.register(AlbumCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
