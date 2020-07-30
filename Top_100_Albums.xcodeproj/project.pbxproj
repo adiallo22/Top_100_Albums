@@ -18,6 +18,7 @@
 		C0095EAE24D212160000B1EC /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EAD24D212160000B1EC /* Album.swift */; };
 		C0095EB024D213B70000B1EC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EAF24D213B70000B1EC /* NetworkService.swift */; };
 		C0095EB224D270950000B1EC /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EB124D270950000B1EC /* AlbumViewModel.swift */; };
+		C05EE69B24D31D8C00C08BA8 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE69A24D31D8C00C08BA8 /* DetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C0095EAD24D212160000B1EC /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		C0095EAF24D213B70000B1EC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C0095EB124D270950000B1EC /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
+		C05EE69A24D31D8C00C08BA8 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C0095EA724D2007C0000B1EC /* Feed.swift */,
+				C05EE69A24D31D8C00C08BA8 /* DetailsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				C0095E8E24D1FFB40000B1EC /* AppDelegate.swift in Sources */,
 				C0095EA824D2007C0000B1EC /* Feed.swift in Sources */,
 				C0095E9024D1FFB40000B1EC /* SceneDelegate.swift in Sources */,
+				C05EE69B24D31D8C00C08BA8 /* DetailsVC.swift in Sources */,
 				C0095EB224D270950000B1EC /* AlbumViewModel.swift in Sources */,
 				C0095EAA24D206210000B1EC /* AlbumCell.swift in Sources */,
 				C0095EAE24D212160000B1EC /* Album.swift in Sources */,

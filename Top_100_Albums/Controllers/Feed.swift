@@ -26,6 +26,10 @@ class Feed : UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         configTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         getTopHundredAlbum()
     }
     
