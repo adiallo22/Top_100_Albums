@@ -18,6 +18,7 @@ class AlbumCell : UITableViewCell {
     
     private var name : UILabel = {
         let label = UILabel()
+        label.textColor = .white
         label.numberOfLines = 0
         label.font = UIFont.boldSystemFont(ofSize: 20)
         return label

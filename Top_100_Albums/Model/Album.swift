@@ -16,5 +16,6 @@ struct Album {
     let copyright : String
     let releaseDate : String
     let genre : String
+    let url : String
     
 }

@@ -32,6 +32,7 @@ class DetailsVC : UIViewController {
     
     private var name : UILabel = {
         let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
         return label
     }()
@@ -50,6 +51,7 @@ class DetailsVC : UIViewController {
     var album : Album? {
         didSet {
             configAlbum()
+            print(album?.url)
         }
     }
     
@@ -67,13 +69,6 @@ class DetailsVC : UIViewController {
 extension DetailsVC {
     
     fileprivate func configUI() {
-        view.addSubview(viewButton)
-        viewButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: padding)
-        viewButton.centerX(inView: view)
-        viewButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        viewButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
-                                            constant: padding).isActive = true
-        //
         view.addSubview(thumbnail)
         thumbnail.anchor(top: view.safeAreaLayoutGuide.topAnchor,
                          left: view.leftAnchor,
@@ -91,6 +86,13 @@ extension DetailsVC {
         }()
         view.addSubview(stack)
         stack.anchor(top: thumbnail.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor)
+        //
+        view.addSubview(viewButton)
+        viewButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: padding)
+        viewButton.centerX(inView: view)
+        viewButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        viewButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
+                                            constant: padding).isActive = true
     }
     
     fileprivate func configAlbum() {

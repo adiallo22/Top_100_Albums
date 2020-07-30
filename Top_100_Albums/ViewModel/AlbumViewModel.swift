@@ -37,6 +37,10 @@ struct AlbumViewModel {
         return album.releaseDate
     }
     
+    var url : String {
+        return album.url
+    }
+    
     init(album: Album) {
         self.album = album
     }
