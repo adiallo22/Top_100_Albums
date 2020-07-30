@@ -31,7 +31,7 @@ class AlbumCell : UITableViewCell {
 extension AlbumCell {
     
     fileprivate func configAlbum() {
-        print("set album cell at..")
+        guard let album = album else { return }
     }
     
 }

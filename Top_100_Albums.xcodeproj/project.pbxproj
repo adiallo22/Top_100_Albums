@@ -17,6 +17,7 @@
 		C0095EAC24D20F080000B1EC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EAB24D20F080000B1EC /* Extensions.swift */; };
 		C0095EAE24D212160000B1EC /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EAD24D212160000B1EC /* Album.swift */; };
 		C0095EB024D213B70000B1EC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EAF24D213B70000B1EC /* NetworkService.swift */; };
+		C0095EB224D270950000B1EC /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EB124D270950000B1EC /* AlbumViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C0095EAB24D20F080000B1EC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C0095EAD24D212160000B1EC /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		C0095EAF24D213B70000B1EC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C0095EB124D270950000B1EC /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		C0095EA424D2001D0000B1EC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C0095EB124D270950000B1EC /* AlbumViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 				C0095E8E24D1FFB40000B1EC /* AppDelegate.swift in Sources */,
 				C0095EA824D2007C0000B1EC /* Feed.swift in Sources */,
 				C0095E9024D1FFB40000B1EC /* SceneDelegate.swift in Sources */,
+				C0095EB224D270950000B1EC /* AlbumViewModel.swift in Sources */,
 				C0095EAA24D206210000B1EC /* AlbumCell.swift in Sources */,
 				C0095EAE24D212160000B1EC /* Album.swift in Sources */,
 				C0095EB024D213B70000B1EC /* NetworkService.swift in Sources */,
