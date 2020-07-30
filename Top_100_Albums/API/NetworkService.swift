@@ -45,14 +45,19 @@ extension NetworkService {
             guard let results = feed["results"] as? NSArray else { return nil }
             for result in results {
                 guard let result = result as? [String:Any] else { return nil }
-                guard let artistName = result["artistName"] as? String,
-                    let artworkUrl100 = result["artworkUrl100"] as? String,
-                    let name = result["name"] as? String else { return nil }
+                let artistName = result["artistName"] as? String ?? ""
+                let artworkUrl100 = result["artworkUrl100"] as? String ?? ""
+                let name = result["name"] as? String ?? ""
+                let copyright = result["copyright"] as? String ?? ""
+                let releaseDate = result["releaseDate"] as? String ?? ""
+                let genres = result["genres"] as? [[String:Any]]  ?? [["1":1]]
+                let genresName = genres[0]["name"] as? String ?? "Music"
+                print("\(copyright) -- \(genresName) -- \(releaseDate)")
                 let album = Album.init(name: name, artist: artistName, thumbnail: artworkUrl100)
                 albums.append(album)
             }
-        } catch {
-            print("error")
+        } catch let error {
+            print("ERROR PARSING - \(error.localizedDescription)")
         }
         return albums
     }
