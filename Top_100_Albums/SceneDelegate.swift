@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow.init(windowScene: scene)
-        window?.rootViewController = Feed()
+        let nav = UINavigationController.init(rootViewController: Feed())
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
 
