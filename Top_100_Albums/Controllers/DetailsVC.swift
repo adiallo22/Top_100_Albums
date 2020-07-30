@@ -51,7 +51,6 @@ class DetailsVC : UIViewController {
     var album : Album? {
         didSet {
             configAlbum()
-            print(album?.url)
         }
     }
     
@@ -118,7 +117,9 @@ extension DetailsVC {
 extension DetailsVC {
     
     @objc func openItunesTapped() {
-        print("itunes opened.")
+        guard let album = album else { return }
+        guard let url = URL.init(string: album.url) else { return }
+        UIApplication.shared.open(url, options: .init(), completionHandler: nil)
     }
     
 }
