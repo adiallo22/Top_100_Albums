@@ -8,11 +8,11 @@
 
 import UIKit
 
+private let cellIdentifier = "albumCell"
+
 protocol AlbumDetailsDelegate: class {
     func accessAlbumDetails(_ album: Album)
 }
-
-private let cellIdentifier = "albumCell"
 
 class Feed : UIViewController {
     
@@ -31,6 +31,7 @@ class Feed : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        navigationItem.title = "Top 100 Albums"
         configTableView()
     }
     
