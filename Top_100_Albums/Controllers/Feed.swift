@@ -10,10 +10,6 @@ import UIKit
 
 private let cellIdentifier = "albumCell"
 
-protocol AlbumDetailsDelegate: class {
-    func accessAlbumDetails(_ album: Album)
-}
-
 class Feed : UIViewController {
     
     private let tableView = UITableView()
@@ -25,8 +21,6 @@ class Feed : UIViewController {
             tableView.reloadData()
         }
     }
-    
-    weak var delegate : AlbumDetailsDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +55,8 @@ extension Feed {
     
     fileprivate func pushDetailsController(atIndex index: IndexPath) {
         let detailsvc = DetailsVC()
+        detailsvc.album = albums[index.row]
         let album = albums[index.row]
-        delegate?.accessAlbumDetails(album)
         navigationController?.pushViewController(detailsvc, animated: true)
     }
     

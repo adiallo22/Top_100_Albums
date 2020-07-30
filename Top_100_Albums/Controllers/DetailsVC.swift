@@ -48,12 +48,18 @@ class DetailsVC : UIViewController {
         return label
     }()
     
+    var album : Album? {
+        didSet {
+            configAlbum()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         configUI()
-        guard let feed = navigationController?.presentingViewController as? Feed else { return }
-        feed.delegate = self
+//        guard let feed = navigationController?.presentingViewController as? Feed else { return }
+//        feed.delegate = self
     }
     
 }
@@ -88,14 +94,8 @@ extension DetailsVC {
         stack.anchor(top: thumbnail.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor)
     }
     
-}
-
-
-//MARK: - AlbumDetailsDelegate
-
-extension DetailsVC : AlbumDetailsDelegate {
-    
-    func accessAlbumDetails(_ album: Album) {
+    fileprivate func configAlbum() {
+        guard let album = album else { return }
         let viewModel = AlbumViewModel.init(album: album)
         name.text = "\(viewModel.name) by \(viewModel.artist)"
         copyright.text = "\(viewModel.copyright) - \(viewModel.releaseDate)"
@@ -108,7 +108,7 @@ extension DetailsVC : AlbumDetailsDelegate {
             }
         }
     }
-
+    
 }
 
 
