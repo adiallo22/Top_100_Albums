@@ -12,14 +12,14 @@ struct NetworkService {
     
     static let shared = NetworkService.init()
     
-    func getTopHundredAlbums(withEndpoint endpoint: String, completion: @escaping(Result<[Album], Error>) -> Void) {
+    func getTopHundredAlbums(withEndpoint endpoint: String, completion: @escaping(Result<[Album], NetworkError>) -> Void) {
         guard let url = URL.init(string: endpoint) else {
-            completion(.failure("Failed to construct the URL" as! Error))
+            completion(.failure(.urlFailed))
             return
         }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
-                completion(.failure(error!))
+                completion(.failure(.serverResponseFailed))
             } else {
                 if let data = data {
                     guard let albums = self.parseJSON(data) else { return }
