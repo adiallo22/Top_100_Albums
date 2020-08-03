@@ -19,7 +19,7 @@
 		C0095EB024D213B70000B1EC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EAF24D213B70000B1EC /* NetworkService.swift */; };
 		C0095EB224D270950000B1EC /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EB124D270950000B1EC /* AlbumViewModel.swift */; };
 		C05EE69B24D31D8C00C08BA8 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE69A24D31D8C00C08BA8 /* DetailsVC.swift */; };
-		C05EE6A324D609B700C08BA8 /* Top_100_AlbumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6A224D609B700C08BA8 /* Top_100_AlbumsTests.swift */; };
+		C05EE6AB24D7A16A00C08BA8 /* AlbumViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6AA24D7A16A00C08BA8 /* AlbumViewModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +48,8 @@
 		C0095EB124D270950000B1EC /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
 		C05EE69A24D31D8C00C08BA8 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		C05EE6A024D609B700C08BA8 /* Top_100_AlbumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Top_100_AlbumsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C05EE6A224D609B700C08BA8 /* Top_100_AlbumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top_100_AlbumsTests.swift; sourceTree = "<group>"; };
 		C05EE6A424D609B700C08BA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C05EE6AA24D7A16A00C08BA8 /* AlbumViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +159,7 @@
 		C05EE6A124D609B700C08BA8 /* Top_100_AlbumsTests */ = {
 			isa = PBXGroup;
 			children = (
-				C05EE6A224D609B700C08BA8 /* Top_100_AlbumsTests.swift */,
+				C05EE6AA24D7A16A00C08BA8 /* AlbumViewModelTest.swift */,
 				C05EE6A424D609B700C08BA8 /* Info.plist */,
 			);
 			path = Top_100_AlbumsTests;
@@ -282,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C05EE6A324D609B700C08BA8 /* Top_100_AlbumsTests.swift in Sources */,
+				C05EE6AB24D7A16A00C08BA8 /* AlbumViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
