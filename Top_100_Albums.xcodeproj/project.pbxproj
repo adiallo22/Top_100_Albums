@@ -20,6 +20,8 @@
 		C0095EB224D270950000B1EC /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095EB124D270950000B1EC /* AlbumViewModel.swift */; };
 		C05EE69B24D31D8C00C08BA8 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE69A24D31D8C00C08BA8 /* DetailsVC.swift */; };
 		C05EE6AB24D7A16A00C08BA8 /* AlbumViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6AA24D7A16A00C08BA8 /* AlbumViewModelTest.swift */; };
+		C05EE6AD24D7A98700C08BA8 /* NetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6AC24D7A98700C08BA8 /* NetworkServiceTest.swift */; };
+		C05EE6AF24D7AD3A00C08BA8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6AE24D7AD3A00C08BA8 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		C05EE6A024D609B700C08BA8 /* Top_100_AlbumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Top_100_AlbumsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05EE6A424D609B700C08BA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C05EE6AA24D7A16A00C08BA8 /* AlbumViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModelTest.swift; sourceTree = "<group>"; };
+		C05EE6AC24D7A98700C08BA8 /* NetworkServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTest.swift; sourceTree = "<group>"; };
+		C05EE6AE24D7AD3A00C08BA8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				C0095EAD24D212160000B1EC /* Album.swift */,
+				C05EE6AE24D7AD3A00C08BA8 /* NetworkError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				C05EE6AA24D7A16A00C08BA8 /* AlbumViewModelTest.swift */,
+				C05EE6AC24D7A98700C08BA8 /* NetworkServiceTest.swift */,
 				C05EE6A424D609B700C08BA8 /* Info.plist */,
 			);
 			path = Top_100_AlbumsTests;
@@ -275,6 +281,7 @@
 				C0095EAA24D206210000B1EC /* AlbumCell.swift in Sources */,
 				C0095EAE24D212160000B1EC /* Album.swift in Sources */,
 				C0095EB024D213B70000B1EC /* NetworkService.swift in Sources */,
+				C05EE6AF24D7AD3A00C08BA8 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C05EE6AD24D7A98700C08BA8 /* NetworkServiceTest.swift in Sources */,
 				C05EE6AB24D7A16A00C08BA8 /* AlbumViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -25,8 +25,7 @@ class AlbumViewModelTest: XCTestCase {
         XCTAssert(vm.copyright == "adele copyright")
         XCTAssert(vm.genre == "pop")
         XCTAssert(vm.releaseDate == "2014")
-        let thumbnail = "\(vm.thumbnail!)"
-        XCTAssert(thumbnail == "image")
+        XCTAssert("\(vm.thumbnail!)" == "image")
         XCTAssert(vm.url == "url")
     }
 
