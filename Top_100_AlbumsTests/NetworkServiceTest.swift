@@ -33,7 +33,7 @@ class NetworkServiceTest: XCTestCase {
         NetworkService.shared.getTopHundredAlbums(withEndpoint: goodEndpoint) { result in
             switch result {
             case .success(let albums):
-                XCTAssert(albums.count == 100)
+                XCTAssertEqual(albums.count, 100)
             case .failure(let error):
                 XCTAssertNil(error)
             }

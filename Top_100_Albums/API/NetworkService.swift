@@ -22,7 +22,10 @@ struct NetworkService {
                 completion(.failure(.serverResponseFailed))
             } else {
                 if let data = data {
-                    guard let albums = self.parseJSON(data) else { return }
+                    guard let albums = self.parseJSON(data) else {
+                        completion(.failure(.parsingFailed))
+                        return
+                    }
                     DispatchQueue.main.async {
                         completion(.success(albums))
                     }
