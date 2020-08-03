@@ -73,7 +73,7 @@ extension DetailsVC {
                          left: view.leftAnchor,
                          right: view.rightAnchor,
                          paddingTop: padding, paddingLeft: padding, paddingRight: padding)
-        thumbnail.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        thumbnail.dimension(height: 300)
         //
         let stack : UIStackView = {
             let stack = UIStackView(arrangedSubviews: [name, genre, copyright])
@@ -89,7 +89,7 @@ extension DetailsVC {
         view.addSubview(viewButton)
         viewButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, paddingBottom: padding)
         viewButton.centerX(inView: view)
-        viewButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        viewButton.dimension(height: 50)
         viewButton.leadingAnchor.constraint(equalTo: view.leadingAnchor,
                                             constant: padding).isActive = true
     }

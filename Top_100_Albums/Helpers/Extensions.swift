@@ -66,4 +66,14 @@ extension UIView {
         }
     }
     
+    func dimension(height: CGFloat? = nil, width: CGFloat? = nil) {
+        translatesAutoresizingMaskIntoConstraints = false
+        if let height = height {
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
+        if let width = width {
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+    }
+    
 }

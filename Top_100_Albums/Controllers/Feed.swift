@@ -12,7 +12,7 @@ private let cellIdentifier = "albumCell"
 
 class Feed : UIViewController {
     
-    private let tableView = UITableView()
+    let tableView = UITableView()
     
     private let endpoint = "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json"
     

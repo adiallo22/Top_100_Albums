@@ -15,7 +15,7 @@ class NetworkServiceTest: XCTestCase {
     let goodEndpoint = "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json"
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
     
     func testFailing_Network_Call_With_Bad_URL() {
@@ -41,7 +41,7 @@ class NetworkServiceTest: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
 
 }
