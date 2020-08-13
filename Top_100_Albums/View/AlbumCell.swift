@@ -16,6 +16,8 @@ class AlbumCell : UITableViewCell {
         }
     }
     
+//    private let gradient = CAGradientLayer()
+    
     private var name : UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -26,13 +28,13 @@ class AlbumCell : UITableViewCell {
     
     private var thumbnail : UIImageView = {
         let imgV = UIImageView()
-//        imgV.image = #imageLiteral(resourceName: "Placeholder")
         return imgV
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configUI()
+//        shadeBottom()
     }
     
     required init?(coder: NSCoder) {
@@ -69,5 +71,15 @@ extension AlbumCell {
             }
         }
     }
+    
+//    fileprivate func shadeBottom() {
+//        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+//        gradient.locations = [0.4, 1.0]
+//        layer.addSublayer(gradient)
+//    }
+//
+//    override func layoutSubviews() {
+//        gradient.frame = self.frame
+//    }
     
 }

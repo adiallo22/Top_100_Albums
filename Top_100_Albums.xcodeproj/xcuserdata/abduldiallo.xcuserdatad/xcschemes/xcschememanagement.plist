@@ -9,6 +9,24 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>Top_100_AlbumsTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C0095E8924D1FFB40000B1EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C05EE69F24D609B700C08BA8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>
