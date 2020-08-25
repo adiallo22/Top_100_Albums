@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit.UIImage
 
 struct NetworkService {
+    
+    var cache = NSCache<NSString, UIImage>()
     
     static let shared = NetworkService.init()
     
@@ -32,6 +35,23 @@ struct NetworkService {
                 }
             }
         }.resume()
+    }
+    
+    func downloadImage(withURL url : URL, completion: @escaping(UIImage?)->Void) {
+        if let cahcedIMG = cache.object(forKey: url.absoluteString as NSString) {
+            print("image is cached..")
+            completion(cahcedIMG)
+        } else {
+            DispatchQueue.global(qos: .background).async {
+                guard let data = try? Data.init(contentsOf: url) else { return }
+                DispatchQueue.main.async {
+                    guard let image = UIImage.init(data: data) else { return }
+                    self.cache.setObject(image, forKey: url.absoluteString as NSString)
+                    print("image is not cached..")
+                    completion(image)
+                }
+            }
+        }
     }
     
 }
@@ -69,5 +89,28 @@ extension NetworkService {
         }
         return albums
     }
+    
+    fileprivate func pars(_ data: Data) -> [Album]? {
+            var albums : [Album] = []
+            do {
+                let dataDecoded = try JSONDecoder().decode(AlbumJSON.self, from: data)
+                for album in dataDecoded.feed.results {
+                    print(album.artistName)
+                    print(album.url)
+                    print(album.genres.name)
+    //                let thumbnail = album.artworkUrl100
+    //                let copyright = album.copyright
+    //                let fname = album.name
+    //                let release = album.releaseDate
+    //                let a = Album.init(name: name, artist: fname, thumbnail: "thumbnail", copyright: copyright, releaseDate: release, genre: "hi", url: "xoxo")
+    //                print(a)
+                    print("-----")
+    //                albums.insert(a, at: 0)
+                }
+            } catch {
+                print("error parsing")
+            }
+            return albums
+        }
     
 }

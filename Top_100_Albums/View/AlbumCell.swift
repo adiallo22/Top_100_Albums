@@ -16,8 +16,6 @@ class AlbumCell : UITableViewCell {
         }
     }
     
-//    private let gradient = CAGradientLayer()
-    
     private var name : UILabel = {
         let label = UILabel()
         label.textColor = .white
@@ -34,7 +32,6 @@ class AlbumCell : UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configUI()
-//        shadeBottom()
     }
     
     required init?(coder: NSCoder) {
@@ -63,23 +60,10 @@ extension AlbumCell {
         guard let album = album else { return }
         let viewModel = AlbumViewModel.init(album: album)
         name.text = "\(viewModel.name) by \(viewModel.artist)"
-        DispatchQueue.global(qos: .background).async {
-            guard let url = viewModel.thumbnail else { return }
-            guard let data = try? Data.init(contentsOf: url) else { return }
-            DispatchQueue.main.async {
-                self.thumbnail.image = UIImage.init(data: data)
-            }
+        guard let url = viewModel.thumbnail else { return }
+        NetworkService.shared.downloadImage(withURL: url) { [weak self] image in
+            self?.thumbnail.image = image
         }
     }
-    
-//    fileprivate func shadeBottom() {
-//        gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-//        gradient.locations = [0.4, 1.0]
-//        layer.addSublayer(gradient)
-//    }
-//
-//    override func layoutSubviews() {
-//        gradient.frame = self.frame
-//    }
     
 }

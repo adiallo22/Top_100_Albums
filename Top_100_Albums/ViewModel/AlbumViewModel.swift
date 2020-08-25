@@ -10,6 +10,8 @@ import UIKit.UIImage
 
 struct AlbumViewModel {
     
+    static let cache = NSCache<NSString, UIImage>()
+    
     private let album : Album
     
     var name : String {
