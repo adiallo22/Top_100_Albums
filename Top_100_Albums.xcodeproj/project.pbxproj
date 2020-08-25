@@ -23,6 +23,7 @@
 		C05EE6AD24D7A98700C08BA8 /* NetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6AC24D7A98700C08BA8 /* NetworkServiceTest.swift */; };
 		C05EE6AF24D7AD3A00C08BA8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6AE24D7AD3A00C08BA8 /* NetworkError.swift */; };
 		C05EE6B124D7B77200C08BA8 /* FeedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6B024D7B77200C08BA8 /* FeedTest.swift */; };
+		C0F1CF4F24F4B8EB0052488D /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1CF4E24F4B8EB0052488D /* DataParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		C05EE6AC24D7A98700C08BA8 /* NetworkServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTest.swift; sourceTree = "<group>"; };
 		C05EE6AE24D7AD3A00C08BA8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C05EE6B024D7B77200C08BA8 /* FeedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTest.swift; sourceTree = "<group>"; };
+		C0F1CF4E24F4B8EB0052488D /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				C0095EAF24D213B70000B1EC /* NetworkService.swift */,
+				C0F1CF4E24F4B8EB0052488D /* DataParser.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			files = (
 				C0095EAC24D20F080000B1EC /* UIView.swift in Sources */,
 				C0095E8E24D1FFB40000B1EC /* AppDelegate.swift in Sources */,
+				C0F1CF4F24F4B8EB0052488D /* DataParser.swift in Sources */,
 				C05A827524EB22B400D40BC5 /* AlbumData.swift in Sources */,
 				C0095EA824D2007C0000B1EC /* Feed.swift in Sources */,
 				C0095E9024D1FFB40000B1EC /* SceneDelegate.swift in Sources */,
