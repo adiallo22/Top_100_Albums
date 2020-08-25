@@ -14,6 +14,7 @@ struct DataParser {
         var albums : [Album] = []
         do {
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any]
+            print(json)
             guard let feed = json?["feed"] as? [String:Any] else { return nil }
             guard let results = feed["results"] as? NSArray else { return nil }
             for result in results {
@@ -40,22 +41,21 @@ struct DataParser {
         return albums
     }
     
-    static fileprivate func pars(_ data: Data) -> [Album]? {
+    static func parseWithCodable(_ data: Data) -> [Album]? {
         var albums : [Album] = []
+        let decoder = JSONDecoder()
         do {
-            let dataDecoded = try JSONDecoder().decode(AlbumJSON.self, from: data)
+            let dataDecoded = try decoder.decode(AlbumJSON.self, from: data)
             for album in dataDecoded.feed.results {
-                print(album.artistName)
-                print(album.url)
-                print(album.genres.name)
-                //                let thumbnail = album.artworkUrl100
-                //                let copyright = album.copyright
-                //                let fname = album.name
-                //                let release = album.releaseDate
-                //                let a = Album.init(name: name, artist: fname, thumbnail: "thumbnail", copyright: copyright, releaseDate: release, genre: "hi", url: "xoxo")
-                //                print(a)
-                print("-----")
-                //                albums.insert(a, at: 0)
+                let thumbnail = album.artworkUrl100
+//                let copyright = album.copyright
+                let name = album.name
+                let release = album.releaseDate
+                let genre = album.genres[0].name
+                let artist = album.artistName
+                let url = album.url
+                let alb = Album.init(name: name, artist: artist, thumbnail: thumbnail, copyright: "copyright", releaseDate: release, genre: genre, url: url)
+                albums.insert(alb, at: 0)
             }
         } catch {
             print("error parsing")

@@ -15,10 +15,14 @@ struct AlbumJSON : Codable {
     struct FeedJSON : Codable {
         struct Result : Codable {
             var artistName : String
+            var artworkUrl100 : String
+            var releaseDate : String
             struct Genre : Codable {
                 var name : String
             }
-            var genres : Genre
+//            var copyright : String
+            var name : String
+            var genres : [Genre]
             var url : String
         }
         var results : [Result]

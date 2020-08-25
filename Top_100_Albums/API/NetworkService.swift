@@ -25,7 +25,7 @@ struct NetworkService {
                 completion(.failure(.serverResponseFailed))
             } else {
                 if let data = data {
-                    guard let albums = DataParser.parseJSON(data) else {
+                    guard let albums = DataParser.parseWithCodable(data) else {
                         completion(.failure(.parsingFailed))
                         return
                     }
