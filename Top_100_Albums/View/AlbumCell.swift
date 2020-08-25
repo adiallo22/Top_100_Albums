@@ -48,12 +48,17 @@ extension AlbumCell {
         addSubview(thumbnail)
         thumbnail.anchor(top: topAnchor, left: leftAnchor,
                          bottom: bottomAnchor, right: rightAnchor,
-                         paddingTop: 5, paddingLeft: 2,
-                         paddingBottom: 5, paddingRight: 2)
+                         paddingTop: 5,
+                         paddingLeft: 5,
+                         paddingBottom: 5,
+                         paddingRight: 5)
         addSubview(name)
-        name.anchor(left: leftAnchor, bottom: bottomAnchor,
-                    right: rightAnchor, paddingLeft: 16,
-                    paddingBottom: 16, paddingRight: 16)
+        name.anchor(left: leftAnchor,
+                    bottom: bottomAnchor,
+                    right: rightAnchor,
+                    paddingLeft: 16,
+                    paddingBottom: 16,
+                    paddingRight: 16)
     }
     
     fileprivate func configAlbum() {

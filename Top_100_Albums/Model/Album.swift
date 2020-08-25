@@ -10,12 +10,12 @@ import Foundation
 
 struct Album {
     
-    let name : String //y
-    let artist : String //y
-    let thumbnail : String //y
-    let copyright : String //y
+    let name : String
+    let artist : String
+    let thumbnail : String
+    let copyright : String
     let releaseDate : String 
-    let genre : String //y
-    let url : String //y
+    let genre : String
+    let url : String 
     
 }

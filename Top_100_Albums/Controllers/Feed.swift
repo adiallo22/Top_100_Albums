@@ -48,14 +48,13 @@ extension Feed {
                          right: view.rightAnchor)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 250
+        tableView.rowHeight = 300
         tableView.separatorStyle = .none
         tableView.register(AlbumCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
     fileprivate func pushDetailsController(atIndex index: IndexPath) {
-        let detailsvc = DetailsVC()
-        detailsvc.album = albums[index.row]
+        let detailsvc = DetailsVC(album: albums[index.row])
         navigationController?.pushViewController(detailsvc, animated: true)
     }
     
@@ -74,7 +73,9 @@ extension Feed : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! AlbumCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? AlbumCell else {
+            fatalError()
+        }
         cell.album = albums[indexPath.row]
         return cell
     }

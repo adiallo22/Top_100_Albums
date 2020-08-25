@@ -48,15 +48,26 @@ class DetailsVC : UIViewController {
         return label
     }()
     
-    var album : Album? {
-        didSet {
-            configAlbum()
-        }
+//    var album : Album? {
+//        didSet {
+//            configAlbum()
+//        }
+//    }
+    
+    private var album : Album
+    
+    init(album: Album) {
+        self.album = album
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        configAlbum()
         configUI()
     }
     
@@ -68,6 +79,7 @@ class DetailsVC : UIViewController {
 extension DetailsVC {
     
     fileprivate func configUI() {
+        view.backgroundColor = .white
         view.addSubview(thumbnail)
         thumbnail.anchor(top: view.safeAreaLayoutGuide.topAnchor,
                          left: view.leftAnchor,
@@ -95,7 +107,6 @@ extension DetailsVC {
     }
     
     fileprivate func configAlbum() {
-        guard let album = album else { return }
         let viewModel = AlbumViewModel.init(album: album)
         name.text = "🎵 \(viewModel.name) by \(viewModel.artist)"
         copyright.text = "\(viewModel.copyright)  ●  \(viewModel.releaseDate)"
@@ -117,7 +128,6 @@ extension DetailsVC {
 extension DetailsVC {
     
     @objc func openItunesTapped() {
-        guard let album = album else { return }
         guard let url = URL.init(string: album.url) else { return }
         UIApplication.shared.open(url, options: .init(), completionHandler: nil)
     }

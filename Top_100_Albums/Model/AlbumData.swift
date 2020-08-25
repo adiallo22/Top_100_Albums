@@ -20,10 +20,10 @@ struct AlbumJSON : Codable {
             struct Genre : Codable {
                 var name : String
             }
-//            var copyright : String
             var name : String
             var genres : [Genre]
             var url : String
+            var copyright : String?
         }
         var results : [Result]
     }
