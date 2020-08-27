@@ -48,12 +48,6 @@ class DetailsVC : UIViewController {
         return label
     }()
     
-//    var album : Album? {
-//        didSet {
-//            configAlbum()
-//        }
-//    }
-    
     private var album : Album
     
     init(album: Album) {
@@ -111,11 +105,9 @@ extension DetailsVC {
         name.text = "🎵 \(viewModel.name) by \(viewModel.artist)"
         copyright.text = "\(viewModel.copyright)  ●  \(viewModel.releaseDate)"
         genre.text = "🎧 \(viewModel.genre)"
-        DispatchQueue.global(qos: .background).async {
-            guard let url = viewModel.thumbnail else { return }
-            guard let data = try? Data.init(contentsOf: url) else { return }
-            DispatchQueue.main.async {
-                self.thumbnail.image = UIImage.init(data: data)
+        if let url = viewModel.thumbnail {
+            NetworkService.shared.downloadImage(withURL: url) { [weak self] image in
+                self?.thumbnail.image = image
             }
         }
     }

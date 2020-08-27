@@ -15,7 +15,9 @@ struct NetworkService {
     
     static let shared = NetworkService.init()
     
-    func getTopHundredAlbums(withEndpoint endpoint: String, completion: @escaping(Result<[Album], NetworkError>) -> Void) {
+    typealias completionHandler = (Result<[Album], NetworkError>) -> Void
+    
+    func getTopHundredAlbums(withEndpoint endpoint: String, completion: @escaping completionHandler) {
         guard let url = URL.init(string: endpoint) else {
             completion(.failure(.urlFailed))
             return
@@ -25,7 +27,7 @@ struct NetworkService {
                 completion(.failure(.serverResponseFailed))
             } else {
                 if let data = data {
-                    guard let albums = DataParser.parseData(data) else {
+                    guard let albums = DataParser.parseData(data, andDecoder: JSONDecoder()) else {
                         completion(.failure(.parsingFailed))
                         return
                     }

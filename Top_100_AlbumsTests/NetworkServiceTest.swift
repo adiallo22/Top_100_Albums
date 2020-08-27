@@ -18,27 +18,27 @@ class NetworkServiceTest: XCTestCase {
         
     }
     
-    func testFailing_Network_Call_With_Bad_URL() {
-        NetworkService.shared.getTopHundredAlbums(withEndpoint: URLFailingEndpoint) { result in
-            switch result {
-            case .success(let articles):
-                XCTAssertNil(articles)
-            case .failure(let error):
-                XCTAssert(error.description == "Failed to construct the URL from the given endpoint.")
-            }
-        }
-    }
+//    func testFailing_Network_Call_With_Bad_URL() {
+//        NetworkService.shared.getTopHundredAlbums(withEndpoint: URLFailingEndpoint) { result in
+//            switch result {
+//            case .success(let articles):
+//                XCTAssertNil(articles)
+//            case .failure(let error):
+//                XCTAssert(error.description == "NetworkError.urlFailed.description")
+//            }
+//        }
+//    }
     
-    func testReturning_100Albums_From_Server() {
-        NetworkService.shared.getTopHundredAlbums(withEndpoint: goodEndpoint) { result in
-            switch result {
-            case .success(let albums):
-                XCTAssertEqual(albums.count, 100)
-            case .failure(let error):
-                XCTAssertNil(error)
-            }
-        }
-    }
+//    func testReturning_100Albums_From_Server() {
+//        NetworkService.shared.getTopHundredAlbums(withEndpoint: goodEndpoint) { result in
+//            switch result {
+//            case .success(let albums):
+//                XCTAssertEqual(albums.count, 100)
+//            case .failure(let error):
+//                XCTAssertNil(error)
+//            }
+//        }
+//    }
 
     override func tearDownWithError() throws {
         super.tearDown()

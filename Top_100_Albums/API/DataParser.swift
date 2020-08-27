@@ -10,9 +10,8 @@ import Foundation
 
 struct DataParser {
     
-    static func parseData(_ data: Data) -> [Album]? {
+    static func parseData(_ data: Data, andDecoder decoder: JSONDecoder) -> [Album]? {
         var albums : [Album] = []
-        let decoder = JSONDecoder()
         do {
             let dataDecoded = try decoder.decode(AlbumJSON.self, from: data)
             for album in dataDecoded.feed.results {
@@ -30,7 +29,7 @@ struct DataParser {
                                      releaseDate: release,
                                      genre: genre,
                                      url: url)
-                albums.insert(alb, at: 0)
+                albums.append(alb)
             }
         } catch {
             print(NetworkError.parsingFailed.description)

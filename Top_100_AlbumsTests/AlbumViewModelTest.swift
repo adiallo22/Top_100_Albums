@@ -14,8 +14,13 @@ class AlbumViewModelTest: XCTestCase {
     var vm : AlbumViewModel!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        let album = Album.init(name: "hello", artist: "adele", thumbnail: "image", copyright: "adele copyright", releaseDate: "2014", genre: "pop", url: "url")
+        let album = Album.init(name: "hello",
+                               artist: "adele",
+                               thumbnail: "image",
+                               copyright: "adele copyright",
+                               releaseDate: "2014",
+                               genre: "pop",
+                               url: "url")
         vm = AlbumViewModel(album: album)
     }
     
@@ -30,7 +35,6 @@ class AlbumViewModelTest: XCTestCase {
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         vm = nil
     }
 
