@@ -43,6 +43,7 @@ struct NetworkService {
         if let cahcedIMG = cache.object(forKey: url.absoluteString as NSString) {
             print("image is cached..")
             completion(cahcedIMG)
+            return
         } else {
             DispatchQueue.global(qos: .background).async {
                 guard let data = try? Data.init(contentsOf: url) else { return }
@@ -51,9 +52,11 @@ struct NetworkService {
                     self.cache.setObject(image, forKey: url.absoluteString as NSString)
                     print("image is not cached..")
                     completion(image)
+                    return
                 }
             }
         }
+        completion(nil)
     }
     
 }

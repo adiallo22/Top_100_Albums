@@ -49,10 +49,13 @@ class NetworkServiceTest: XCTestCase {
     }
     
     func testDownloadImage_MustReturnNoImage() {
+        let exceptation = XCTestExpectation.init(description: "No image should be returned")
         guard let badURL = URL.init(string: badEndpoint) else { return }
         NetworkService.shared.downloadImage(withURL: badURL) { image in
             XCTAssertNil(image)
+            exceptation.fulfill()
         }
+        wait(for: [exceptation], timeout: 10.0)
     }
     
     func testDownloadImage_MustReturnImage() {
