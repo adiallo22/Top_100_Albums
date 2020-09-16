@@ -39,24 +39,26 @@ struct NetworkService {
         }.resume()
     }
     
-    func downloadImage(withURL url : URL, completion: @escaping(UIImage?) -> Void) {
+    func downloadImage(withURL url : URL, completion: @escaping(Result<UIImage, NetworkError>) -> Void) {
+        var toBeReturnedIMG : UIImage?
         if let cahcedIMG = cache.object(forKey: url.absoluteString as NSString) {
-            print("image is cached..")
-            completion(cahcedIMG)
-            return
+            toBeReturnedIMG = cahcedIMG
+            completion(.success(toBeReturnedIMG!))
         } else {
             DispatchQueue.global(qos: .background).async {
                 guard let data = try? Data.init(contentsOf: url) else { return }
                 DispatchQueue.main.async {
                     guard let image = UIImage.init(data: data) else { return }
-                    self.cache.setObject(image, forKey: url.absoluteString as NSString)
+                    toBeReturnedIMG = image
+                    self.cache.setObject(toBeReturnedIMG!, forKey: url.absoluteString as NSString)
                     print("image is not cached..")
-                    completion(image)
-                    return
+                    completion(.success(image))
                 }
             }
         }
-        completion(nil)
+        if toBeReturnedIMG == nil {
+            completion(.failure(.failedLoadIMG))
+        }
     }
     
 }

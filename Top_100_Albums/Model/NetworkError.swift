@@ -13,12 +13,14 @@ enum NetworkError : Error {
     case urlFailed
     case serverResponseFailed
     case parsingFailed
+    case failedLoadIMG
     
     var description: String {
         switch self {
             case .urlFailed: return "Failed to construct the URL from the given endpoint."
             case .serverResponseFailed: return "Failure to get a reponse from the server."
             case .parsingFailed: return "Failed parsing the JSon data."
+            case .failedLoadIMG: return "Failed loading image"
         }
     }
     

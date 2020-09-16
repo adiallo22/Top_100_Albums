@@ -66,8 +66,13 @@ extension AlbumCell {
         let viewModel = AlbumViewModel.init(album: album)
         name.text = "\(viewModel.name) by \(viewModel.artist)"
         guard let url = viewModel.thumbnail else { return }
-        NetworkService.shared.downloadImage(withURL: url) { [weak self] image in
-            self?.thumbnail.image = image
+        NetworkService.shared.downloadImage(withURL: url) { [weak self] result in
+            switch result {
+            case .success(let image):
+                self?.thumbnail.image = image
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
     }
     

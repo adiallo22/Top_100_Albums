@@ -26,7 +26,7 @@ class DetailsVC : UIViewController {
         button.backgroundColor = .black
         button.tintColor = .white
         button.layer.cornerRadius = 15
-        button.layer.masksToBounds = true
+        button.clipsToBounds = true
         return button
     }()
     
@@ -106,8 +106,13 @@ extension DetailsVC {
         copyright.text = "\(viewModel.copyright)  ●  \(viewModel.releaseDate)"
         genre.text = "🎧 \(viewModel.genre)"
         if let url = viewModel.thumbnail {
-            NetworkService.shared.downloadImage(withURL: url) { [weak self] image in
-                self?.thumbnail.image = image
+            NetworkService.shared.downloadImage(withURL: url) { [weak self] result in
+                switch result {
+                case .success(let image):
+                    self?.thumbnail.image = image
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
         }
     }

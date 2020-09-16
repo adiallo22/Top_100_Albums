@@ -51,18 +51,27 @@ class NetworkServiceTest: XCTestCase {
     func testDownloadImage_MustReturnNoImage() {
         let exceptation = XCTestExpectation.init(description: "No image should be returned")
         guard let badURL = URL.init(string: badEndpoint) else { return }
-        NetworkService.shared.downloadImage(withURL: badURL) { image in
-            XCTAssertNil(image)
-            exceptation.fulfill()
+        NetworkService.shared.downloadImage(withURL: badURL) { result in
+            switch result {
+            case .success(_):
+                print("")
+            case .failure(let error):
+                XCTAssertNotNil(error)
+                exceptation.fulfill()
+            }
         }
         wait(for: [exceptation], timeout: 10.0)
     }
     
     func testDownloadImage_MustReturnImage() {
-        guard let URL = URL.init(string: "https://is4-ssl.mzstatic.com/image/thumb/Music114/v4/6b/16/05/6b16053c-e27c-98e2-199c-976303f7ed8a/075679803160.jpg/200x200bb.png") else { return }
+        let url = "https://is4-ssl.mzstatic.com/image/thumb/Music114/v4/6b/16/05/6b16053c-e27c-98e2-199c-976303f7ed8a/075679803160.jpg/200x200bb.png"
+        let exceptation = XCTestExpectation.init(description: "Image must be returned")
+        guard let URL = URL.init(string: url) else { return }
         NetworkService.shared.downloadImage(withURL: URL) { image in
             XCTAssertNotNil(image)
+            exceptation.fulfill()
         }
+        wait(for: [exceptation], timeout: 10.0)
     }
 
     override func tearDownWithError() throws {
