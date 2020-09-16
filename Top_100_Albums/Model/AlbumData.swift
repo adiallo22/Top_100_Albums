@@ -8,8 +8,6 @@
 
 import Foundation
 
-//let genre : String
-
 struct AlbumJSON : Codable {
     
     struct FeedJSON : Codable {

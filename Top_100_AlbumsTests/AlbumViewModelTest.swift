@@ -11,7 +11,7 @@ import XCTest
 
 class AlbumViewModelTest: XCTestCase {
     
-    var vm : AlbumViewModel!
+    var vm : AlbumViewModel?
 
     override func setUpWithError() throws {
         let album = Album.init(name: "hello",
@@ -24,14 +24,16 @@ class AlbumViewModelTest: XCTestCase {
         vm = AlbumViewModel(album: album)
     }
     
-    func testViewModel_Returning_Propreties() {
-        XCTAssert(vm.artist == "adele")
-        XCTAssert(vm.name == "hello")
-        XCTAssert(vm.copyright == "adele copyright")
-        XCTAssert(vm.genre == "pop")
-        XCTAssert(vm.releaseDate == "2014")
-        XCTAssert("\(vm.thumbnail!)" == "image")
-        XCTAssert(vm.url == "url")
+    func testViewModel_Returning_RightPropreties() {
+        if let vm = vm {
+            XCTAssertEqual(vm.artist, "adele")
+            XCTAssertEqual(vm.name, "hello")
+            XCTAssertEqual(vm.copyright, "adele copyright")
+            XCTAssertEqual(vm.genre, "pop")
+            XCTAssertEqual(vm.releaseDate, "2014")
+            XCTAssertEqual(vm.url, "url")
+            XCTAssertEqual(vm.thumbnail, URL(string: "image"))
+        }
     }
 
     override func tearDownWithError() throws {

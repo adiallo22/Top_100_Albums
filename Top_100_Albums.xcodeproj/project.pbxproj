@@ -23,7 +23,6 @@
 		C05EE6AB24D7A16A00C08BA8 /* AlbumViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6AA24D7A16A00C08BA8 /* AlbumViewModelTest.swift */; };
 		C05EE6AD24D7A98700C08BA8 /* NetworkServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6AC24D7A98700C08BA8 /* NetworkServiceTest.swift */; };
 		C05EE6AF24D7AD3A00C08BA8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6AE24D7AD3A00C08BA8 /* NetworkError.swift */; };
-		C05EE6B124D7B77200C08BA8 /* FeedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6B024D7B77200C08BA8 /* FeedTest.swift */; };
 		C0F1CF4F24F4B8EB0052488D /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1CF4E24F4B8EB0052488D /* DataParser.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +57,6 @@
 		C05EE6AA24D7A16A00C08BA8 /* AlbumViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModelTest.swift; sourceTree = "<group>"; };
 		C05EE6AC24D7A98700C08BA8 /* NetworkServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTest.swift; sourceTree = "<group>"; };
 		C05EE6AE24D7AD3A00C08BA8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		C05EE6B024D7B77200C08BA8 /* FeedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTest.swift; sourceTree = "<group>"; };
 		C0F1CF4E24F4B8EB0052488D /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,7 +171,6 @@
 			children = (
 				C05EE6AA24D7A16A00C08BA8 /* AlbumViewModelTest.swift */,
 				C05EE6AC24D7A98700C08BA8 /* NetworkServiceTest.swift */,
-				C05EE6B024D7B77200C08BA8 /* FeedTest.swift */,
 				C020928924F8322B0061847B /* ParserTest.swift */,
 				C05EE6A424D609B700C08BA8 /* Info.plist */,
 			);
@@ -302,7 +299,6 @@
 				C020928A24F8322B0061847B /* ParserTest.swift in Sources */,
 				C05EE6AD24D7A98700C08BA8 /* NetworkServiceTest.swift in Sources */,
 				C05EE6AB24D7A16A00C08BA8 /* AlbumViewModelTest.swift in Sources */,
-				C05EE6B124D7B77200C08BA8 /* FeedTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
