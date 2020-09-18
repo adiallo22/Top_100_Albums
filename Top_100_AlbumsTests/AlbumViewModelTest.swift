@@ -14,14 +14,7 @@ class AlbumViewModelTest: XCTestCase {
     var vm : AlbumViewModel?
 
     override func setUpWithError() throws {
-        let album = Album.init(name: "hello",
-                               artist: "adele",
-                               thumbnail: "image",
-                               copyright: "adele copyright",
-                               releaseDate: "2014",
-                               genre: "pop",
-                               url: "url")
-        vm = AlbumViewModel(album: album)
+        vm = makeSUT()
     }
     
     func testViewModel_Returning_RightPropreties() {
@@ -38,6 +31,17 @@ class AlbumViewModelTest: XCTestCase {
 
     override func tearDownWithError() throws {
         vm = nil
+    }
+    
+    func makeSUT() -> AlbumViewModel {
+        let album = Album.init(name: "hello",
+                               artist: "adele",
+                               thumbnail: "image",
+                               copyright: "adele copyright",
+                               releaseDate: "2014",
+                               genre: "pop",
+                               url: "url")
+        return AlbumViewModel(album: album)
     }
 
 }

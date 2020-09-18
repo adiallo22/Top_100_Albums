@@ -9,6 +9,11 @@
 import Foundation
 import UIKit.UIImage
 
+protocol NetworkServiceInterface {
+    func getTopHundredAlbums(withEndpoint endpoint: String, completion: @escaping (Result<[Album], NetworkError>) -> Void)
+    func downloadImage(withURL url : URL, completion: @escaping(Result<UIImage, NetworkError>) -> Void)
+}
+
 struct NetworkService {
     
     var cache = NSCache<NSString, UIImage>()
@@ -16,6 +21,10 @@ struct NetworkService {
     static let shared = NetworkService.init()
     
     typealias completionHandler = (Result<[Album], NetworkError>) -> Void
+    
+}
+
+extension NetworkService : NetworkServiceInterface {
     
     func getTopHundredAlbums(withEndpoint endpoint: String, completion: @escaping completionHandler) {
         guard let url = URL.init(string: endpoint) else {

@@ -14,9 +14,9 @@ class Feed : UIViewController {
     
     let tableView = UITableView()
     
-    private let endpoint = "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json"
+    let endpoint = "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json"
     
-    private var albums : [Album] = [] {
+    var albums : [Album] = [] {
         didSet {
             tableView.reloadData()
         }

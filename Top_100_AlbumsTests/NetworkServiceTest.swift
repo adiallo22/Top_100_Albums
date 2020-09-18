@@ -20,13 +20,15 @@ class NetworkServiceTest: XCTestCase {
     
     func testGivenBadURL_ShouldReturn_URLFailed() throws {
         let exceptation = XCTestExpectation.init(description: "Network should fail with a bad url type")
-        NetworkService.shared.getTopHundredAlbums(withEndpoint: badEndpoint) { result in
-            switch result {
-            case .success(_):
-                print("")
-            case .failure(let error):
-                XCTAssertNotNil(error)
-                exceptation.fulfill()
+        measure {
+            NetworkService.shared.getTopHundredAlbums(withEndpoint: badEndpoint) { result in
+                switch result {
+                case .success(_):
+                    print("")
+                case .failure(let error):
+                    XCTAssertNotNil(error)
+                    exceptation.fulfill()
+                }
             }
         }
         wait(for: [exceptation], timeout: 10.0)
@@ -35,14 +37,16 @@ class NetworkServiceTest: XCTestCase {
     
     func testGivenRightURL_ShouldReturn_Albums() {
         let exceptation = XCTestExpectation.init(description: "Network return full 100 albums")
-        NetworkService.shared.getTopHundredAlbums(withEndpoint: goodEndpoint) { result in
-            switch result {
-            case .success(let albums):
-                XCTAssertEqual(albums.count, 100)
-                XCTAssertNotNil(albums)
-                exceptation.fulfill()
-            case .failure(let error):
-                XCTAssertNil(error)
+        measure {
+            NetworkService.shared.getTopHundredAlbums(withEndpoint: goodEndpoint) { result in
+                switch result {
+                case .success(let albums):
+                    XCTAssertEqual(albums.count, 100)
+                    XCTAssertNotNil(albums)
+                    exceptation.fulfill()
+                case .failure(let error):
+                    XCTAssertNil(error)
+                }
             }
         }
         wait(for: [exceptation], timeout: 10.0)
@@ -50,14 +54,16 @@ class NetworkServiceTest: XCTestCase {
     
     func testDownloadImage_MustReturnNoImage() {
         let exceptation = XCTestExpectation.init(description: "No image should be returned")
-        guard let badURL = URL.init(string: badEndpoint) else { return }
-        NetworkService.shared.downloadImage(withURL: badURL) { result in
-            switch result {
-            case .success(_):
-                print("")
-            case .failure(let error):
-                XCTAssertNotNil(error)
-                exceptation.fulfill()
+        measure {
+            guard let badURL = URL.init(string: badEndpoint) else { return }
+            NetworkService.shared.downloadImage(withURL: badURL) { result in
+                switch result {
+                case .success(_):
+                    print("")
+                case .failure(let error):
+                    XCTAssertNotNil(error)
+                    exceptation.fulfill()
+                }
             }
         }
         wait(for: [exceptation], timeout: 10.0)
@@ -67,9 +73,11 @@ class NetworkServiceTest: XCTestCase {
         let url = "https://is4-ssl.mzstatic.com/image/thumb/Music114/v4/6b/16/05/6b16053c-e27c-98e2-199c-976303f7ed8a/075679803160.jpg/200x200bb.png"
         let exceptation = XCTestExpectation.init(description: "Image must be returned")
         guard let URL = URL.init(string: url) else { return }
-        NetworkService.shared.downloadImage(withURL: URL) { image in
-            XCTAssertNotNil(image)
-            exceptation.fulfill()
+        measure {
+            NetworkService.shared.downloadImage(withURL: URL) { image in
+                XCTAssertNotNil(image)
+                exceptation.fulfill()
+            }
         }
         wait(for: [exceptation], timeout: 10.0)
     }
