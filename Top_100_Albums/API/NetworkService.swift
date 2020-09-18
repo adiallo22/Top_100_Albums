@@ -24,6 +24,8 @@ struct NetworkService {
     
 }
 
+//MARK: - NetworkServiceInterface
+
 extension NetworkService : NetworkServiceInterface {
     
     func getTopHundredAlbums(withEndpoint endpoint: String, completion: @escaping completionHandler) {

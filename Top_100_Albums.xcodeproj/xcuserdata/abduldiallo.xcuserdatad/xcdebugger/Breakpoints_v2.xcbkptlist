@@ -24,8 +24,8 @@
             filePath = "Top_100_AlbumsTests/NetworkServiceTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "testGivenRightURL_ShouldReturn_Albums()"
             landmarkType = "7">
          </BreakpointContent>

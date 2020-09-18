@@ -13,9 +13,60 @@ class NetworkServiceTest: XCTestCase {
     
     let badEndpoint = "https://rss.itunes..com/api/v1/us/apple-music/top-/all/100/abcd.json"
     let goodEndpoint = "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json"
+    let mockNetworkSerice = MockNetworkService.init()
 
     override class func setUp() {
         super.setUp()
+    }
+    
+    func testServerResponseIsWorkingForAlbum() {
+        let exceptation = XCTestExpectation.init(description: "Network should return album")
+        measure {
+            mockNetworkSerice.getTopHundredAlbums(withEndpoint: goodEndpoint) { result in
+                switch result {
+                case .success(let albums):
+                    XCTAssertEqual(albums[0].artist, "test")
+                    exceptation.fulfill()
+                case .failure(_):
+                    print("")
+                }
+            }
+        }
+        wait(for: [exceptation], timeout: 10.0)
+    }
+    
+    func testServerResponseIsWorkingForImage() {
+        let exceptation = XCTestExpectation.init(description: "Network should return image")
+        guard let url = URL.init(string: goodEndpoint) else { return }
+        measure {
+            mockNetworkSerice.downloadImage(withURL: url) { result in
+                switch result {
+                case .success(let img):
+                    XCTAssertNotNil(img)
+                    exceptation.fulfill()
+                case .failure(_):
+                    print("")
+                }
+            }
+        }
+        wait(for: [exceptation], timeout: 10.0)
+    }
+    
+    func testServerIsNotResponding() {
+        mockNetworkSerice.shouldReturnError = true
+        let exceptation = XCTestExpectation.init(description: "Network is not responding")
+        measure {
+            mockNetworkSerice.getTopHundredAlbums(withEndpoint: goodEndpoint) { result in
+                switch result {
+                case .success(_):
+                    print("")
+                case .failure(let error):
+                    XCTAssertNotNil(error)
+                    exceptation.fulfill()
+                }
+            }
+        }
+        wait(for: [exceptation], timeout: 10.0)
     }
     
     func testGivenBadURL_ShouldReturn_URLFailed() throws {
