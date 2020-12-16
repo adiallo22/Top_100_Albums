@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		97955F6B8005428549EF989E /* Pods_Top_100_Albums.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95646046779B47BC37980621 /* Pods_Top_100_Albums.framework */; };
-		A892511065A9311138C39A4A /* Pods_Top_100_AlbumsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC288B6063D201861D3A512E /* Pods_Top_100_AlbumsTests.framework */; };
 		C0095E8E24D1FFB40000B1EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095E8D24D1FFB40000B1EC /* AppDelegate.swift */; };
 		C0095E9024D1FFB40000B1EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0095E8F24D1FFB40000B1EC /* SceneDelegate.swift */; };
 		C0095E9724D1FFB60000B1EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0095E9624D1FFB60000B1EC /* Assets.xcassets */; };
@@ -24,16 +23,6 @@
 		C05EE6AF24D7AD3A00C08BA8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE6AE24D7AD3A00C08BA8 /* NetworkError.swift */; };
 		C0F1CF4F24F4B8EB0052488D /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F1CF4E24F4B8EB0052488D /* DataParser.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C05EE6A524D609B700C08BA8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C0095E8224D1FFB40000B1EC /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C0095E8924D1FFB40000B1EC;
-			remoteInfo = Top_100_Albums;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0D22E97D1AF24DFB86AF1263 /* Pods-Top_100_AlbumsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Top_100_AlbumsTests.release.xcconfig"; path = "Target Support Files/Pods-Top_100_AlbumsTests/Pods-Top_100_AlbumsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,7 +43,6 @@
 		C0095EB124D270950000B1EC /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
 		C05A827424EB22B400D40BC5 /* AlbumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumData.swift; sourceTree = "<group>"; };
 		C05EE69A24D31D8C00C08BA8 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
-		C05EE6A024D609B700C08BA8 /* Top_100_AlbumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Top_100_AlbumsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05EE6AE24D7AD3A00C08BA8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C0F1CF4E24F4B8EB0052488D /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		CC288B6063D201861D3A512E /* Pods_Top_100_AlbumsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Top_100_AlbumsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,14 +58,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C05EE69D24D609B700C08BA8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A892511065A9311138C39A4A /* Pods_Top_100_AlbumsTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -89,7 +69,6 @@
 				EBF5C05E9C0E667B36434265 /* Pods-Top_100_AlbumsTests.debug.xcconfig */,
 				0D22E97D1AF24DFB86AF1263 /* Pods-Top_100_AlbumsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -116,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				C0095E8A24D1FFB40000B1EC /* Top_100_Albums.app */,
-				C05EE6A024D609B700C08BA8 /* Top_100_AlbumsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,25 +191,6 @@
 			productReference = C0095E8A24D1FFB40000B1EC /* Top_100_Albums.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C05EE69F24D609B700C08BA8 /* Top_100_AlbumsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C05EE6A924D609B700C08BA8 /* Build configuration list for PBXNativeTarget "Top_100_AlbumsTests" */;
-			buildPhases = (
-				663C1BF4A1D5FB28E1656221 /* [CP] Check Pods Manifest.lock */,
-				C05EE69C24D609B700C08BA8 /* Sources */,
-				C05EE69D24D609B700C08BA8 /* Frameworks */,
-				C05EE69E24D609B700C08BA8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C05EE6A624D609B700C08BA8 /* PBXTargetDependency */,
-			);
-			name = Top_100_AlbumsTests;
-			productName = Top_100_AlbumsTests;
-			productReference = C05EE6A024D609B700C08BA8 /* Top_100_AlbumsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -244,10 +203,6 @@
 				TargetAttributes = {
 					C0095E8924D1FFB40000B1EC = {
 						CreatedOnToolsVersion = 11.4.1;
-					};
-					C05EE69F24D609B700C08BA8 = {
-						CreatedOnToolsVersion = 11.4.1;
-						TestTargetID = C0095E8924D1FFB40000B1EC;
 					};
 				};
 			};
@@ -265,7 +220,6 @@
 			projectRoot = "";
 			targets = (
 				C0095E8924D1FFB40000B1EC /* Top_100_Albums */,
-				C05EE69F24D609B700C08BA8 /* Top_100_AlbumsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -277,13 +231,6 @@
 			files = (
 				C0095E9A24D1FFB60000B1EC /* LaunchScreen.storyboard in Resources */,
 				C0095E9724D1FFB60000B1EC /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C05EE69E24D609B700C08BA8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,28 +253,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Top_100_Albums-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		663C1BF4A1D5FB28E1656221 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Top_100_AlbumsTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -373,22 +298,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C05EE69C24D609B700C08BA8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C05EE6A624D609B700C08BA8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C0095E8924D1FFB40000B1EC /* Top_100_Albums */;
-			targetProxy = C05EE6A524D609B700C08BA8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C0095E9824D1FFB60000B1EC /* LaunchScreen.storyboard */ = {
@@ -554,48 +464,6 @@
 			};
 			name = Release;
 		};
-		C05EE6A724D609B700C08BA8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBF5C05E9C0E667B36434265 /* Pods-Top_100_AlbumsTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZNY957A2G6;
-				INFOPLIST_FILE = Top_100_AlbumsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "abdulCo.Top-100-AlbumsTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Top_100_Albums.app/Top_100_Albums";
-			};
-			name = Debug;
-		};
-		C05EE6A824D609B700C08BA8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0D22E97D1AF24DFB86AF1263 /* Pods-Top_100_AlbumsTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZNY957A2G6;
-				INFOPLIST_FILE = Top_100_AlbumsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "abdulCo.Top-100-AlbumsTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Top_100_Albums.app/Top_100_Albums";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -613,15 +481,6 @@
 			buildConfigurations = (
 				C0095E9F24D1FFB60000B1EC /* Debug */,
 				C0095EA024D1FFB60000B1EC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C05EE6A924D609B700C08BA8 /* Build configuration list for PBXNativeTarget "Top_100_AlbumsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C05EE6A724D609B700C08BA8 /* Debug */,
-				C05EE6A824D609B700C08BA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
