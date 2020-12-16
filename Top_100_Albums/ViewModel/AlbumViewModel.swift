@@ -12,12 +12,8 @@ struct AlbumViewModel {
     
     private let album : Album
     
-    var name : String {
-        return album.name
-    }
-    
-    var artist : String {
-        return album.artist
+    var nameAndArtist : String {
+        return "\(album.name) by \(album.artist)"
     }
     
     var thumbnail : URL? {

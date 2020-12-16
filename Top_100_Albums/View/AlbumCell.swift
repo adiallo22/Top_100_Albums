@@ -46,8 +46,10 @@ extension AlbumCell {
     
     fileprivate func configUI() {
         addSubview(thumbnail)
-        thumbnail.anchor(top: topAnchor, left: leftAnchor,
-                         bottom: bottomAnchor, right: rightAnchor,
+        thumbnail.anchor(top: topAnchor,
+                         left: leftAnchor,
+                         bottom: bottomAnchor,
+                         right: rightAnchor,
                          paddingTop: 5,
                          paddingLeft: 5,
                          paddingBottom: 5,
@@ -64,7 +66,7 @@ extension AlbumCell {
     fileprivate func configAlbum() {
         guard let album = album else { return }
         let viewModel = AlbumViewModel.init(album: album)
-        name.text = "\(viewModel.name) by \(viewModel.artist)"
+        name.text = viewModel.nameAndArtist
         guard let url = viewModel.thumbnail else { return }
         NetworkService.shared.downloadImage(withURL: url) { [weak self] result in
             switch result {

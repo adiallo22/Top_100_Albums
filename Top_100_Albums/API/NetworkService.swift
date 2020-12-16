@@ -16,6 +16,8 @@ protocol NetworkServiceInterface {
 
 struct NetworkService {
     
+    private init() {}
+    
     var cache = NSCache<NSString, UIImage>()
     
     static let shared = NetworkService.init()

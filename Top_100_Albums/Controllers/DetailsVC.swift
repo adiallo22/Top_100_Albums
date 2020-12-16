@@ -102,7 +102,7 @@ extension DetailsVC {
     
     fileprivate func configAlbum() {
         let viewModel = AlbumViewModel.init(album: album)
-        name.text = "🎵 \(viewModel.name) by \(viewModel.artist)"
+        name.text = "🎵 \(viewModel.nameAndArtist)"
         copyright.text = "\(viewModel.copyright)  ●  \(viewModel.releaseDate)"
         genre.text = "🎧 \(viewModel.genre)"
         if let url = viewModel.thumbnail {
