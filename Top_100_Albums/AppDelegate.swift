@@ -6,15 +6,20 @@
 //  Copyright © 2020 Abdul Diallo. All rights reserved.
 //
 
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        AppCenter.start(withAppSecret: "cefcc5bf-5eda-4249-8934-632568ffcc99", services:[
+          Analytics.self,
+          Crashes.self
+        ])
         return true
     }
 
@@ -31,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
 
 }
 
